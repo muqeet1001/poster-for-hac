@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>AI Ignite Hackathon 2026 - HKBK College of Engineering</title>
+  <!-- Tailwind CSS v3 CDN -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <!-- Google Fonts: Plus Jakarta Sans & Bungee for Street Style -->
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Bungee&amp;family=Bungee+Outline&amp;display=swap"
+    rel="stylesheet" />
+  <style data-purpose="typography">
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    .display-font {
+      font-family: 'Bungee', cursive;
+      letter-spacing: -0.02em;
+      line-height: 0.85;
+    }
+
+    .display-outline {
+      font-family: 'Bungee Outline', cursive;
+    }
+
+    .main-title-font {
+      font-weight: 800;
+      letter-spacing: -0.05em;
+      text-transform: uppercase;
+      line-height: 0.8;
+    }
+  </style>
+  <style data-purpose="layout-decorations">
+    .bg-street {
+      background-color: #FFD500;
+      background-image: radial-gradient(circle at 2px 2px, rgba(0, 0, 0, 0.05) 1px, transparent 0), url(https://lh3.googleusercontent.com/aida-public/AB6AXuCTSCIxi6BmoomdoyuDqhje8gaPKBorYhzZNgo0s3aQQlP5IyWs9IwGjbt6eDHvwr8KX14qhdgceSl9ANC_LIUKJ8CXdrKkhdLZsskE9rEfHJGDKjt0EjBAbWQ_btFIYU-Z0fXeB0npKYViGIJ3NVTSZN4uX0Rq6TtKk_cKhig6U7010_b8wcuaLSIRGjwQtuUehDtaY3lf6D31RbAbV3YDbMWXAhcfv1A84AFDTsaF3ixrQvSiziFXT2DqE8jfekBqK40l_qPkWWo);
+      /* Subtle grit texture */
+      background-size: 24px 24px, auto
+    }
+
+    .industrial-border {
+      border: 6px solid #000
+    }
+
+    .industrial-border-b {
+      border-bottom: 6px solid #000
+    }
+
+    .industrial-border-r {
+      border-right: 6px solid #000
+    }
+
+    .sticker-badge {
+      background: white;
+      border: 3px solid #000;
+      box-shadow: 4px 4px 0 #000;
+      transform: rotate(-2deg);
+      display: inline-block
+    }
+
+    .inner-shadow {
+      box-shadow: inset 4px 4px 0 rgba(0, 0, 0, 0.1)
+    }
+
+    /* Bento-style tight packing */
+    .bento-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 0;
+      /* No gaps for connected industrial look */
+    }
+  </style>
+</head>
+
+<body class="bg-street text-black min-h-screen selection:bg-black selection:text-white">
+  <!-- Main Wrapper with Bold Industrial Frame -->
+  <div
+    class="max-w-[1000px] mx-auto my-8 industrial-border bg-white overflow-hidden shadow-[20px_20px_0px_rgba(0,0,0,1)]">
+    <!-- BEGIN: HeaderSection -->
+    <header class="bg-white industrial-border-b p-8 md:p-12 text-center relative">
+      <div class="mb-6">
+        <h2 class="display-font text-2xl md:text-4xl uppercase tracking-tighter leading-none">
+          HKBK COLLEGE OF ENGINEERING <span class="text-yellow-400">Presents</span>
+        </h2>
+      </div>
+      <div class="relative py-4" data-purpose="main-title">
+        <h1 class="display-font text-7xl md:text-[140px] text-black">
+          AI IGNITE<br />
+          <span class="display-outline text-black">HACKATHON</span><br />
+          2026
+        </h1>
+        <!-- Street Elements -->
+        <div
+          class="absolute top-0 right-0 w-24 h-24 bg-black rounded-full flex items-center justify-center -rotate-12 translate-x-4 -translate-y-4 hidden md:flex">
+          <span class="text-white font-black text-xs text-center leading-tight">THE FUTURE<br />IS NOW</span>
+        </div>
+      </div>
+      <div class="mt-8">
+        <p class="display-font text-2xl md:text-5xl bg-black text-white px-6 py-3 inline-block transform rotate-1">
+          BUILD. LEARN. INNOVATE.
+        </p>
+      </div>
+    </header>
+    <!-- END: HeaderSection -->
+    <!-- BEGIN: Bento Grid Layout -->
+    <div class="grid grid-cols-1 md:grid-cols-2 border-b-6 border-black">
+      <!-- About Section (Large Block) -->
+      <div class="industrial-border-r industrial-border-b md:border-b-0 p-8 bg-yellow-400 relative">
+        <div class="sticker-badge px-3 py-1 mb-6 text-sm font-black uppercase">Mission_Log.txt</div>
+        <h2 class="display-font text-3xl mb-4 underline decoration-4">About the Event</h2>
+        <p class="text-xl font-bold leading-tight">
+          A 2-day high-octane innovation sprint. Master AI in our premium workshop, then build the future in a
+          theme-based hackathon. No fluff. Just code.
+        </p>
+        <!-- Decorative Element -->
+        <div class="mt-8 flex gap-2">
+          <div class="w-8 h-8 bg-black"></div>
+          <div class="w-8 h-8 bg-black opacity-50"></div>
+          <div class="w-8 h-8 bg-black opacity-20"></div>
+        </div>
+      </div>
+      <!-- Details & QR (Compact Block) -->
+      <div class="p-8 flex flex-col justify-between bg-white">
+        <div class="space-y-4">
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 bg-black text-white flex items-center justify-center display-font text-xl">01</div>
+            <p class="font-black text-xl uppercase italic">Team: 2–4 Builders</p>
+          </div>
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 bg-black text-white flex items-center justify-center display-font text-xl">02</div>
+            <p class="font-black text-xl uppercase italic">Open to all branches</p>
+          </div>
+          <div class="p-4 border-4 border-black bg-gray-100 mt-4">
+            <p class="text-xs font-black uppercase text-gray-500">Venue_Coordinates</p>
+            <p class="text-lg font-black uppercase">HKBK Campus, Bangalore</p>
+            <p class="text-md font-black uppercase" >CSE and ISE Seminar Hall</p>
+          </div>
+        </div>
+        <div class="mt-8 flex items-stretch justify-between gap-4">
+          <div class="border-4 border-black p-3 bg-white flex-shrink-0 flex items-center justify-center w-28 h-28">
+            <img src="../p-1/qr.png" alt="QR Code" style="width: 90px; height: 80px; display: block;">
+          </div>
+          <button
+            class="flex-grow bg-black text-white display-font text-xl py-6 px-4 hover:bg-yellow-400 hover:text-black transition-colors duration-200 flex items-center justify-center text-center">
+            REGISTER_NOW <br> ₹400/Team
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- BEGIN: Schedule Section -->
+    <div class="grid grid-cols-1 md:grid-cols-2 industrial-border-b">
+      <!-- Day 1 -->
+      <div class="p-8 bg-blue-500 industrial-border-r border-b-6 md:border-b-0 border-black text-white">
+        <div class="flex justify-between items-start mb-6">
+          <h3 class="display-font text-4xl leading-none uppercase">Day 01<br />Masterclass</h3>
+          <div class="w-10 h-10 border-4 border-white rounded-full"></div>
+        </div>
+        <ul class="space-y-2 font-bold text-lg uppercase tracking-tight">
+          <li class="flex gap-2">/ AI Project Pipelines</li>
+          <li class="flex gap-2">/ Hands-on Tooling</li>
+          <li class="flex gap-2">/ Prompt Engineering</li>
+          <li class="flex gap-2">/ Rapid Dev Flows</li>
+        </ul>
+      </div>
+      <!-- Day 2 -->
+      <div class="p-8 bg-green-500 text-black">
+        <div class="flex justify-between items-start mb-6">
+          <h3 class="display-font text-4xl leading-none uppercase">Day 02<br />Hackathon</h3>
+          <div class="w-10 h-10 border-4 border-black"></div>
+        </div>
+        <ul class="space-y-2 font-bold text-lg uppercase tracking-tight">
+          <li class="flex gap-2">&gt; Secret Theme Reveal</li>
+          <li class="flex gap-2">&gt; Team Build Phase</li>
+          <li class="flex gap-2">&gt; Innovation Lab</li>
+          <li class="flex gap-2">&gt; Pitch to Judges</li>
+        </ul>
+      </div>
+    </div>
+    <!-- BEGIN: Prize Section -->
+    <section class="bg-red-600 p-8 md:p-12 relative overflow-hidden">
+      <!-- Background Text -->
+      <div
+        class="absolute top-0 right-0 display-font text-[180px] text-black opacity-10 leading-none -rotate-12 pointer-events-none select-none">
+        CASH
+      </div>
+      <div class="relative z-10 flex flex-col md:flex-row items-center gap-8">
+        <div class="md:w-1/3">
+          <h2 class="display-font text-5xl text-white uppercase leading-none mb-2">Prizes</h2>
+          <div class="h-2 w-24 bg-black"></div>
+        </div>
+        <div class="md:w-2/3 grid grid-cols-1 sm:grid-cols-3 gap-4 w-full">
+          <div class="sticker-badge p-4 text-center transform rotate-1">
+            <p class="text-xs font-black text-gray-500 uppercase">Prize Pool</p>
+            <p class="display-font text-2xl text-red-600">₹15,000</p>
+          </div>
+          <div class="sticker-badge p-4 text-center transform -rotate-1">
+            <p class="text-xs font-black text-gray-500 uppercase">Status</p>
+            <p class="display-font text-xl">Certificates</p>
+          </div>
+          <div class="sticker-badge p-4 text-center transform rotate-2">
+            <p class="text-xs font-black text-gray-500 uppercase">Gear</p>
+            <p class="display-font text-xl">Swag Kits</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- BEGIN: FooterSection -->
+    <footer class="bg-black text-white p-10 text-center" data-purpose="main-footer">
+      <div class="max-w-4xl mx-auto">
+        <h3 class="display-font text-3xl md:text-5xl mb-8 tracking-tighter">CODE THE FUTURE WITH AI</h3>
+         
+        <div class="pt-8 border-t border-white/20">
+          <p class="font-bold text-[20px] uppercase tracking-[0.3em] opacity-60">
+            22/1 OPP MANYATA TECH PARK NAGWARE BANGALORE - 560045
+          </p>
+        </div>
+      </div>
+    </footer>
+    <!-- END: FooterSection -->
+  </div>
+  <!-- Additional Street Decorative Elements (Outside Frame) -->
+  <div class="fixed top-10 left-10 pointer-events-none opacity-30 mix-blend-multiply hidden xl:block">
+    <div class="display-font text-8xl -rotate-90 origin-top-left">#AI2026</div>
+  </div>
+</body>
+
+</html>
