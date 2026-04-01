@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AI Ignite Hackathon 2026 Poster</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&amp;family=Bangers&amp;family=Inter:wght@400;700;900&amp;display=swap" rel="stylesheet"/>
+<style data-purpose="custom-fonts">
+    /* Using Bangers for the expressive title and Archivo Black for bold sections */
+    .font-expressive { font-family: 'Bangers', cursive; }
+    .font-bold-heavy { font-family: 'Archivo Black', sans-serif; }
+    .font-inter { font-family: 'Inter', sans-serif; }
+  </style>
+<style data-purpose="branding-colors">
+    :root {
+      --vibrant-blue: #0047FF;
+      --bright-yellow: #FFEE00;
+      --deep-black: #0a0a0a;
+      --hot-pink: #FF00FF;
+    }
+    .bg-vibrant-blue { background-color: var(--vibrant-blue); }
+    .bg-bright-yellow { background-color: var(--bright-yellow); }
+    .bg-deep-black { background-color: var(--deep-black); }
+    .text-vibrant-blue { color: var(--vibrant-blue); }
+    .text-bright-yellow { color: var(--bright-yellow); }
+    .border-hot-pink { border-color: var(--hot-pink); }
+  </style>
+<style data-purpose="layout-patterns">
+    /* Recreating the halftone/dotted pattern seen in the original blue background */
+    .bg-pattern {
+      background-image: radial-gradient(rgba(0,0,0,0.15) 1px, transparent 1px);
+      background-size: 4px 4px;
+    }
+    
+    /* Skewed text effect for the main title */
+    .title-skew {
+      transform: rotate(-3deg);
+      text-shadow: 4px 4px 0px #000;
+    }
+
+    /* Ticket tear-off effect for the voucher section */
+    .ticket-cutout {
+      position: relative;
+    }
+    .ticket-cutout::before, .ticket-cutout::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      width: 20px;
+      height: 20px;
+      background-color: var(--vibrant-blue);
+      border-radius: 50%;
+      transform: translateY(-50%);
+    }
+    .ticket-cutout::before { left: -10px; }
+    .ticket-cutout::after { right: -10px; }
+
+    .dashed-divider {
+      border-left: 2px dashed #000;
+      height: 80%;
+    }
+  </style>
+<style>
+    .text-outline-heavy {
+      -webkit-text-stroke: 3px black;
+      paint-order: stroke fill;
+    }
+    .overlap-header {
+      margin-bottom: -0.5em;
+    }
+    .header-shadow-heavy {
+      text-shadow: 6px 6px 0px rgba(0,0,0,1);
+    }
+  </style></head>
+<body class="bg-gray-200 flex justify-center items-center min-h-screen p-4 font-inter">
+<!-- BEGIN: Main Poster Container -->
+<main class="w-[600px] h-[900px] bg-white shadow-2xl overflow-hidden flex flex-col relative" data-purpose="poster-frame">
+<!-- BEGIN: Top Section (Vibrant Blue) -->
+<section class="bg-vibrant-blue bg-pattern flex-grow flex flex-col items-center pt-0 px-0 text-white relative h-[60%]">
+<!-- Header Logos / Settled Nav -->
+<header class="w-full flex items-center justify-between gap-3 bg-white px-6 py-2 border-b-[4px] border-deep-black shadow-[0px_6px_0px_var(--bright-yellow)] mb-6 z-40" data-purpose="header-branding">
+    <!-- Left: Wide HKBK banner -->
+    <div class="flex-1 flex items-center min-w-0 pr-2 md:pr-4">
+        <img src="image.png" alt="HKBK Institutions" class="w-full object-contain object-left max-h-[45px] md:max-h-[55px]" />
+    </div>
+    
+    <!-- Right: Associated Logos -->
+    <div class="flex items-center gap-2 md:gap-3 shrink-0 border-l-[3px] border-dashed border-gray-300 pl-3">
+        <!-- Accreditations & Approvals -->
+        <img src="AICTE-Logo.webp" alt="AICTE" class="h-[24px] md:h-[28px] w-auto object-contain" />
+        <img src="VTU-webp.webp" alt="VTU" class="h-[24px] md:h-[28px] w-auto object-contain" />
+        <img src="nba.webp" alt="NBA" class="h-[24px] md:h-[28px] w-auto object-contain" />
+        
+        <div class="h-[20px] border-l-[2px] border-gray-300 mx-1"></div>
+        
+        <!-- IEEE Chapters -->
+        <img src="../IEEE-Logo.webp" alt="IEEE Logo" class="h-[24px] md:h-[28px] w-auto object-contain" />
+        <div class="overflow-hidden flex items-center justify-center w-[45px] h-[25px] md:w-[50px] md:h-[30px]">
+            <img src="../ieeecsjpeg.jpeg" alt="IEEE CS Logo" class="h-[25px] md:h-[30px] w-auto object-contain scale-[1.3]" />
+        </div>
+    </div>
+</header>
+
+<div class="w-full px-8 flex flex-col items-center relative">
+<!-- Main Expressive Title -->
+<div class="relative flex flex-col items-center" data-purpose="main-title">
+<!-- "REGISTER" Label -->
+<div class="absolute -left-12 top-0 bg-[#FF00FF] px-2 py-1 rotate-[-15deg] z-30 border-2 border-white shadow-md">
+<span class="text-xs font-black italic text-white">REGISTER</span>
+</div>
+<div class="flex flex-col items-center relative">
+<!-- AI Text -->
+<h1 class="font-expressive text-[100px] leading-none text-white uppercase tracking-tighter text-outline-heavy header-shadow-heavy z-10 translate-y-6">
+      AI
+    </h1>
+<!-- IGNITE Text -->
+<h1 class="font-expressive text-[150px] leading-[0.7] text-white uppercase tracking-tighter text-outline-heavy header-shadow-heavy z-20">
+      IGNITE
+    </h1>
+<!-- "HACKATHON" Label -->
+<div class="absolute -right-8 bottom-16 bg-[#FF00FF] px-3 py-1 rotate-[10deg] z-30 border-2 border-white shadow-md">
+<span class="text-xs font-black italic text-white">HACKATHON</span>
+</div>
+<!-- 2026 Text -->
+<h2 class="font-expressive text-[110px] leading-[0.7] text-white uppercase tracking-tighter text-outline-heavy header-shadow-heavy z-10 mt-[-10px]">
+      2026
+    </h2>
+</div>
+</div>
+<!-- Tagline Badges -->
+<div class="flex gap-2 mt-8" data-purpose="tagline-pills">
+<span class="bg-[#FF00FF] text-[10px] font-bold-heavy px-4 py-1 skew-x-[-10deg] border border-white">BUILD.</span>
+<span class="bg-[#FF00FF] text-[10px] font-bold-heavy px-4 py-1 skew-x-[-10deg] border border-white">LEARN.</span>
+<span class="bg-[#FF00FF] text-[10px] font-bold-heavy px-4 py-1 skew-x-[-10deg] border border-white">INNOVATE.</span>
+</div>
+</div>
+
+<!-- Yellow Voucher Section (Bento Box style) -->
+<div class="absolute -bottom-16 left-1/2 -translate-x-1/2 w-[90%] bg-bright-yellow ticket-cutout flex h-32 text-black shadow-lg" data-purpose="voucher-section">
+<!-- Left: Badge -->
+<div class="w-1/4 flex items-center justify-center border-r border-black/10">
+<div class="bg-vibrant-blue text-white rounded-full w-20 h-20 flex flex-col items-center justify-center text-center p-2 border-2 border-dashed border-white">
+<span class="text-[10px] font-bold leading-tight">CASH PRIZE</span>
+<span class="text-xs font-black">POOL</span>
+</div>
+</div>
+<!-- Middle: Prize Details -->
+<div class="w-1/2 flex flex-col items-center justify-center px-4">
+<p class="font-bold-heavy text-lg tracking-tighter uppercase leading-none">AI INNOVATION</p>
+<p class="font-expressive text-4xl leading-none">₹15,000</p>
+<p class="text-[8px] font-bold uppercase mt-1">Winning Team Award &amp; Recognition</p>
+</div>
+<!-- Right: Registration CTA -->
+<div class="w-1/4 flex flex-col items-center justify-center border-l border-black/10 relative">
+<div class="absolute left-0 dashed-divider"></div>
+<p class="text-[10px] font-bold uppercase">Open for</p>
+<p class="font-expressive text-4xl leading-none">ALL</p>
+<p class="text-[10px] font-bold uppercase">Students</p>
+</div>
+</div>
+</section>
+<!-- END: Top Section -->
+<!-- BEGIN: Bottom Section (Deep Black) -->
+<section class="bg-deep-black flex-grow pt-24 pb-10 px-8 flex flex-col justify-between" data-purpose="event-details">
+<!-- Event Schedule Grid -->
+<div class="flex justify-between items-start gap-4 text-white" data-purpose="schedule-grid">
+<!-- Day 1 -->
+<div class="flex-1 flex flex-col border-r border-white/20 pr-4">
+<div class="inline-block bg-vibrant-blue text-white text-[10px] font-bold-heavy px-3 py-1 mb-3 self-start border border-white/50">
+            Day 1: Masterclass
+          </div>
+<div class="space-y-1">
+<p class="font-bold text-sm tracking-tight">Core AI Projects</p>
+<p class="font-bold text-sm tracking-tight">Prompt Engineering</p>
+<p class="text-[11px] text-gray-400 font-medium">Rapid Dev Flow &amp; Arch.</p>
+</div>
+</div>
+<!-- Day 2 -->
+<div class="flex-1 flex flex-col">
+<div class="inline-block bg-vibrant-blue text-white text-[10px] font-bold-heavy px-3 py-1 mb-3 self-start border border-white/50">
+            Day 2: The Sprint
+          </div>
+<div class="space-y-1">
+<p class="font-bold text-sm tracking-tight">Theme Challenges</p>
+<p class="font-bold text-sm tracking-tight">Teams of 2-4 Members</p>
+<p class="text-[11px] text-gray-400 font-medium">Live Pitching &amp; Demos</p>
+</div>
+</div>
+<!-- QR Section -->
+<div class="flex flex-col items-center justify-center shrink-0 pl-2">
+    <div class="bg-white p-2.5 border-[3px] border-[#0047FF] shadow-[4px_4px_0px_#0047FF]">
+        <img src="qr.png" alt="Scan to Register" class="w-[90px] h-[90px] object-contain" />
+    </div>
+    <div class="bg-bright-yellow text-black px-3 py-1 mt-4 border border-[#0047FF] skew-x-[-10deg] shadow-[3px_3px_0px_#0047FF]">
+        <span class="font-black text-[11px] uppercase italic block skew-x-[10deg]">Scan to Register</span>
+    </div>
+</div>
+</div>
+<!-- Footer Info -->
+<div class="flex items-end justify-between border-t border-white/20 pt-6" data-purpose="footer-branding">
+    <div class="flex items-center gap-3">
+        <div class="w-2.5 h-2.5 bg-green-500 rounded-full animate-pulse shadow-[0px_0px_6px_#22c55e]"></div>
+        <div class="text-white">
+            <h3 class="font-black text-sm md:text-lg tracking-tighter uppercase">HKBK COLLEGE</h3>
+            <p class="text-[9px] md:text-[10px] text-gray-400 leading-tight mt-0.5"><span class="font-bold text-gray-300">Opp. to Manyata Tech Park</span><br/>Nagawara, Bangalore</p>
+        </div>
+    </div>
+    
+    <div class="flex flex-col items-center justify-center -translate-y-2">
+        <div class="bg-bright-yellow text-black border-2 border-[var(--vibrant-blue)] shadow-[4px_4px_0px_var(--hot-pink)] px-3 md:px-4 py-1 skew-x-[-5deg]">
+            <span class="font-bold-heavy text-xl md:text-2xl tracking-tighter block skew-x-[5deg] whitespace-nowrap">15.04-16.04</span>
+        </div>
+        <div class="w-full flex justify-between text-[9px] md:text-[10px] font-bold uppercase text-gray-300 mt-2 tracking-widest px-2">
+            <span>START 09:00</span>
+            <span>END 18:00</span>
+        </div>
+    </div>
+    
+    <div class="flex flex-col items-end gap-1.5 text-right mt-1">
+        <div class="text-[8px] md:text-[9px] text-gray-400 font-bold uppercase tracking-wider mb-0.5">STUDENT REGISTRATION CORDINATORS:</div>
+        <div class="bg-vibrant-blue text-white px-3 py-1 md:py-1.5 border border-white border-l-[4px] border-l-[#FF00FF] skew-x-[-10deg] shadow-[2px_2px_0px_var(--bright-yellow)] transition-transform hover:-translate-y-0.5">
+            <span class="font-black text-[10px] md:text-xs block skew-x-[10deg] tracking-wider">+91 99450 37962</span>
+        </div>
+        <div class="bg-vibrant-blue text-white px-3 py-1 md:py-1.5 border border-white border-l-[4px] border-l-[var(--bright-yellow)] skew-x-[-10deg] shadow-[2px_2px_0px_var(--hot-pink)] transition-transform hover:-translate-y-0.5">
+            <span class="font-black text-[10px] md:text-xs block skew-x-[10deg] tracking-wider">+91 77601 44114</span>
+        </div>
+    </div>
+</div>
+</section>
+<!-- END: Bottom Section -->
+</main>
+<!-- END: Main Poster Container -->
+</body></html>
