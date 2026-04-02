@@ -19,7 +19,7 @@
   });
 
   await page.screenshot({
-    path: 'final.png',
+    path: 'bc2.png',
     fullPage: true
   });
 

@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Poster - Wise Up</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #4a9b9b;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .poster {
+            position: relative;
+            width: 576px;
+            height: 1024px;
+            background: linear-gradient(135deg, #4a9b9b 0%, #5fb3b3 100%);
+        }
+
+        /* Logo */
+        .logo {
+            position: absolute;
+            top: 40px;
+            right: 40px;
+            width: 90px;
+            height: 90px;
+            background: white;
+            border-radius: 50%;
+            z-index: 10;
+        }
+
+        /* Central Table */
+        .table {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 200px;
+            height: 600px;
+            background: linear-gradient(180deg, #f0f0f0 0%, #d5d5d5 100%);
+            border-radius: 60px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+            z-index: 2;
+        }
+
+        .table-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(90deg);
+            font-size: 90px;
+            font-weight: 900;
+            color: #4a9b9b;
+            letter-spacing: 20px;
+        }
+
+        /* Circle at bottom */
+        .bottom-circle {
+            position: absolute;
+            bottom: 100px;
+            right: 140px;
+            width: 100px;
+            height: 100px;
+            background: rgba(200, 200, 200, 0.4);
+            border-radius: 50%;
+            z-index: 3;
+        }
+
+        /* Person circles */
+        .person {
+            position: absolute;
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 5px solid white;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            z-index: 4;
+        }
+
+        .person img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .placeholder {
+            width: 100%;
+            height: 100%;
+            background: #ccc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            color: #666;
+            font-weight: 600;
+        }
+
+        /* Labels */
+        .label {
+            position: absolute;
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            z-index: 5;
+        }
+
+        .label-role {
+            font-size: 11px;
+            font-weight: 400;
+            opacity: 0.9;
+        }
+
+        /* Dashed lines */
+        .line {
+            stroke: white;
+            stroke-width: 2;
+            stroke-dasharray: 6, 6;
+            fill: none;
+            opacity: 0.7;
+        }
+
+        /* Positions - Top to Bottom, Left to Right */
+        .p1 {
+            top: 130px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .p2 {
+            top: 200px;
+            left: 100px;
+        }
+
+        .p3 {
+            top: 200px;
+            right: 100px;
+        }
+
+        .p4 {
+            top: 270px;
+            left: 80px;
+        }
+
+        .p5 {
+            top: 270px;
+            right: 80px;
+        }
+
+        .p6 {
+            top: 340px;
+            left: 100px;
+        }
+
+        .p7 {
+            top: 340px;
+            right: 100px;
+        }
+
+        .p8 {
+            top: 410px;
+            left: 80px;
+        }
+
+        .p9 {
+            top: 410px;
+            right: 80px;
+        }
+
+        .p10 {
+            top: 480px;
+            left: 100px;
+        }
+
+        .p11 {
+            top: 480px;
+            right: 100px;
+        }
+
+        .p12 {
+            bottom: 130px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Label positions */
+        .l1 {
+            top: 100px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+        }
+
+        .l2 {
+            top: 170px;
+            left: 35px;
+        }
+
+        .l3 {
+            top: 170px;
+            right: 35px;
+            text-align: right;
+        }
+
+        .l4 {
+            top: 240px;
+            left: 15px;
+        }
+
+        .l5 {
+            top: 240px;
+            right: 15px;
+            text-align: right;
+        }
+
+        .l6 {
+            top: 310px;
+            left: 35px;
+        }
+
+        .l7 {
+            top: 310px;
+            right: 35px;
+            text-align: right;
+        }
+
+        .l8 {
+            top: 380px;
+            left: 15px;
+        }
+
+        .l9 {
+            top: 380px;
+            right: 15px;
+            text-align: right;
+        }
+
+        .l10 {
+            top: 450px;
+            left: 35px;
+        }
+
+        .l11 {
+            top: 450px;
+            right: 35px;
+            text-align: right;
+        }
+
+        .l12 {
+            bottom: 100px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+        }
+
+        .bottom-text {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            color: white;
+            font-size: 14px;
+        }
+
+        .bottom-text div:first-child {
+            font-weight: 600;
+        }
+
+        .bottom-text div:last-child {
+            font-weight: 400;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="poster">
+        <!-- Logo -->
+        <div class="logo"></div>
+
+        <!-- Central Table -->
+        <div class="table">
+            <div class="table-text">TEAM</div>
+        </div>
+
+        <!-- Bottom Circle -->
+        <div class="bottom-circle"></div>
+
+        <!-- Dashed Lines -->
+        <svg width="576" height="1024" style="position: absolute; top: 0; left: 0; pointer-events: none; z-index: 3;">
+            <line class="line" x1="288" y1="185" x2="288" y2="212" />
+            <line class="line" x1="155" y1="255" x2="188" y2="270" />
+            <line class="line" x1="421" y1="255" x2="388" y2="270" />
+            <line class="line" x1="135" y1="325" x2="178" y2="335" />
+            <line class="line" x1="441" y1="325" x2="398" y2="335" />
+            <line class="line" x1="155" y1="395" x2="188" y2="405" />
+            <line class="line" x1="421" y1="395" x2="388" y2="405" />
+            <line class="line" x1="135" y1="465" x2="178" y2="470" />
+            <line class="line" x1="441" y1="465" x2="398" y2="470" />
+            <line class="line" x1="155" y1="535" x2="188" y2="540" />
+            <line class="line" x1="421" y1="535" x2="388" y2="540" />
+            <line class="line" x1="288" y1="894" x2="288" y2="862" />
+        </svg>
+
+        <!-- People -->
+        <div class="person p1"><img src="seema.png" alt="Seema"></div>
+        <div class="person p2">
+            <div class="placeholder">Photo</div>
+        </div>
+        <div class="person p3">
+            <div class="placeholder">Photo</div>
+        </div>
+        <div class="person p4">
+            <div class="placeholder">Photo</div>
+        </div>
+        <div class="person p5">
+            <div class="placeholder">Photo</div>
+        </div>
+        <div class="person p6">
+            <div class="placeholder">Photo</div>
+        </div>
+        <div class="person p7">
+            <div class="placeholder">Photo</div>
+        </div>
+        <div class="person p8">
+            <div class="placeholder">Photo</div>
+        </div>
+        <div class="person p9">
+            <div class="placeholder">Photo</div>
+        </div>
+        <div class="person p10">
+            <div class="placeholder">Photo</div>
+        </div>
+        <div class="person p11">
+            <div class="placeholder">Photo</div>
+        </div>
+        <div class="person p12">
+            <div class="placeholder">Photo</div>
+        </div>
+
+        <!-- Labels -->
+        <div class="label l1">Seema<br><span class="label-role">Chairperson</span></div>
+        <div class="label l2">Yusuf<br><span class="label-role">Vice Chair</span></div>
+        <div class="label l3">Zuhaib<br><span class="label-role">Treasurer</span></div>
+        <div class="label l4">Tuba Naaz<br><span class="label-role">Secretary</span></div>
+        <div class="label l5">Likhith<br><span class="label-role">Design Lead</span></div>
+        <div class="label l6">Rumaan<br><span class="label-role">Editorial & Content</span></div>
+        <div class="label l7">Muqeet<br><span class="label-role">Web Design</span></div>
+        <div class="label l8">Satwik<br><span class="label-role">Social Media</span></div>
+        <div class="label l9">Siddique<br><span class="label-role">Tech Lead</span></div>
+        <div class="label l10">Bhavani<br><span class="label-role">Tech Co-Lead</span></div>
+        <div class="label l11">Shabeen<br><span class="label-role">PR Lead</span></div>
+        <div class="label l12">Manisha<br><span class="label-role">Event Coordinator</span></div>
+
+        <!-- Bottom Text -->
+        <div class="bottom-text">
+            <div>He's here...</div>
+            <div>but not here</div>
+        </div>
+    </div>
+</body>
+
+</html>

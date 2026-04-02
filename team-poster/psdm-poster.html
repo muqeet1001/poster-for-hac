@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSDM Division Poster</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #1a1a1a;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .poster {
+            position: relative;
+            width: 600px;
+            height: 900px;
+            background: #0a0a0a;
+            overflow: hidden;
+        }
+
+        /* Decorative eye top left */
+        .eye {
+            position: absolute;
+            top: 50px;
+            left: 30px;
+            width: 180px;
+            height: 70px;
+            border: 3px solid white;
+            border-radius: 50%;
+            z-index: 5;
+        }
+
+        .eye-pupil {
+            position: absolute;
+            top: 50%;
+            left: 30%;
+            transform: translate(-50%, -50%);
+            width: 30px;
+            height: 30px;
+            border: 3px solid white;
+            border-radius: 50%;
+        }
+
+        /* Decorative circles */
+        .circle {
+            position: absolute;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+        }
+
+        .c1 {
+            top: 60px;
+            left: 50%;
+            width: 30px;
+            height: 30px;
+        }
+
+        .c2 {
+            top: 140px;
+            right: 380px;
+            width: 35px;
+            height: 35px;
+        }
+
+        .c3 {
+            top: 400px;
+            left: 40px;
+            width: 50px;
+            height: 50px;
+        }
+
+        .c4 {
+            top: 450px;
+            right: 40px;
+            width: 35px;
+            height: 35px;
+        }
+
+        .c5 {
+            bottom: 200px;
+            right: 50px;
+            width: 45px;
+            height: 45px;
+        }
+
+        /* Star */
+        .star {
+            position: absolute;
+            top: 90px;
+            left: 50%;
+            color: #f4a300;
+            font-size: 35px;
+            z-index: 5;
+        }
+
+        /* Atom */
+        .atom {
+            position: absolute;
+            top: 100px;
+            right: 120px;
+            width: 45px;
+            height: 45px;
+            border: 2px solid #f4a300;
+            border-radius: 50%;
+            z-index: 5;
+        }
+
+        .atom::before,
+        .atom::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 2px solid #f4a300;
+            border-radius: 50%;
+            top: 0;
+            left: 0;
+        }
+
+        .atom::before {
+            transform: rotate(60deg);
+        }
+
+        .atom::after {
+            transform: rotate(-60deg);
+        }
+
+        .atom-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 8px;
+            height: 8px;
+            background: #f4a300;
+            border-radius: 50%;
+        }
+
+        /* Signature */
+        .signature {
+            position: absolute;
+            top: 40px;
+            right: 40px;
+            font-family: 'Brush Script MT', cursive;
+            font-size: 55px;
+            color: white;
+            z-index: 10;
+        }
+
+        /* Title */
+        .title {
+            position: absolute;
+            top: 140px;
+            left: 40px;
+            z-index: 10;
+        }
+
+        .icon-circle {
+            width: 70px;
+            height: 70px;
+            background: #f4a300;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .divisi {
+            font-size: 32px;
+            font-weight: 900;
+            color: white;
+        }
+
+        .psdm {
+            font-size: 110px;
+            font-weight: 900;
+            color: white;
+            line-height: 0.85;
+            letter-spacing: -3px;
+            transform: rotate(-5deg);
+        }
+
+        .subtitle {
+            font-size: 16px;
+            color: white;
+            margin-top: 5px;
+        }
+
+        /* Logos top right */
+        .logo-comm {
+            position: absolute;
+            top: 130px;
+            right: 60px;
+            width: 90px;
+            height: 90px;
+            background: #d32f2f;
+            border-radius: 10px;
+            z-index: 10;
+        }
+
+        .logo-text {
+            position: absolute;
+            top: 195px;
+            right: 60px;
+            color: white;
+            font-size: 11px;
+            text-align: center;
+            width: 120px;
+            line-height: 1.3;
+            z-index: 10;
+        }
+
+        /* Yellow blobs */
+        .blob {
+            position: absolute;
+            background: #f4a300;
+            z-index: 1;
+        }
+
+        .b1 {
+            top: 200px;
+            right: 100px;
+            width: 240px;
+            height: 200px;
+            border-radius: 50% 40% 60% 50%;
+            transform: rotate(20deg);
+        }
+
+        .b2 {
+            top: 340px;
+            left: 70px;
+            width: 220px;
+            height: 180px;
+            border-radius: 60% 50% 40% 60%;
+            transform: rotate(-15deg);
+        }
+
+        .b3 {
+            top: 500px;
+            right: 90px;
+            width: 230px;
+            height: 190px;
+            border-radius: 50% 60% 50% 40%;
+            transform: rotate(25deg);
+        }
+
+        .b4 {
+            bottom: 300px;
+            left: 60px;
+            width: 240px;
+            height: 200px;
+            border-radius: 40% 50% 60% 50%;
+            transform: rotate(-20deg);
+        }
+
+        .b5 {
+            bottom: 450px;
+            right: 100px;
+            width: 220px;
+            height: 180px;
+            border-radius: 60% 40% 50% 60%;
+            transform: rotate(15deg);
+        }
+
+        /* People - exact positions from reference */
+        .person {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 5px solid white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            z-index: 2;
+        }
+
+        .person img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .placeholder {
+            width: 100%;
+            height: 100%;
+            background: #2a2a2a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 14px;
+        }
+
+        /* Name overlays on photos */
+        .name {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.85);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 30px;
+            text-align: center;
+            z-index: 3;
+        }
+
+        .name-big {
+            font-size: 28px;
+            font-weight: 900;
+            display: block;
+        }
+
+        .name-small {
+            font-size: 13px;
+            font-weight: 400;
+            display: block;
+            margin-top: 3px;
+        }
+
+        /* Badges */
+        .badge {
+            position: absolute;
+            background: black;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 35px;
+            border: 3px solid white;
+            font-size: 14px;
+            font-weight: 700;
+            text-align: center;
+            line-height: 1.2;
+            z-index: 3;
+        }
+
+        /* Exact positions matching reference image */
+        /* Top center - Rafli */
+        .p1 {
+            top: 120px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Second row - Aurel (left), Ryan (right) */
+        .p2 {
+            top: 280px;
+            left: 90px;
+        }
+
+        .p3 {
+            top: 280px;
+            right: 90px;
+        }
+
+        /* Third row - Reza (left), Yauma (center), Araisya (right) */
+        .p4 {
+            top: 420px;
+            left: 140px;
+        }
+
+        .p5 {
+            top: 420px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .p6 {
+            top: 420px;
+            right: 140px;
+        }
+
+        /* Fourth row - Nazario (left), Inriani (right) */
+        .p7 {
+            bottom: 300px;
+            left: 90px;
+        }
+
+        .p8 {
+            bottom: 300px;
+            right: 90px;
+        }
+
+        /* Bottom - Nadiva (left center) */
+        .p9 {
+            bottom: 160px;
+            left: 140px;
+        }
+
+        /* Kabinet text */
+        .kabinet {
+            position: absolute;
+            bottom: 200px;
+            right: 70px;
+            font-size: 60px;
+            font-weight: 900;
+            color: white;
+            transform: rotate(-8deg);
+            z-index: 10;
+            line-height: 0.9;
+        }
+
+        /* Social media */
+        .social {
+            position: absolute;
+            bottom: 50px;
+            left: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            z-index: 10;
+        }
+
+        .social-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: white;
+            font-size: 12px;
+        }
+
+        .icon {
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+        }
+
+        .ig {
+            background: #e4405f;
+        }
+
+        .tt {
+            background: #000;
+            border: 2px solid white;
+        }
+
+        .yt {
+            background: #ff0000;
+        }
+
+        /* Tupoksi */
+        .tupoksi {
+            position: absolute;
+            bottom: 50px;
+            left: 40px;
+            right: 40px;
+            z-index: 10;
+        }
+
+        .tupoksi-title {
+            font-size: 20px;
+            font-weight: 900;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .tupoksi-text {
+            font-size: 10px;
+            color: white;
+            line-height: 1.5;
+            columns: 2;
+            column-gap: 20px;
+        }
+
+        /* Flower decoration */
+        .flower {
+            position: absolute;
+            bottom: 50px;
+            right: 60px;
+            color: white;
+            font-size: 80px;
+            z-index: 5;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="poster">
+        <!-- Decorative eye -->
+        <div class="eye">
+            <div class="eye-pupil"></div>
+        </div>
+
+        <!-- Circles -->
+        <div class="circle c1"></div>
+        <div class="circle c2"></div>
+        <div class="circle c3"></div>
+        <div class="circle c4"></div>
+        <div class="circle c5"></div>
+
+        <!-- Star -->
+        <div class="star">★</div>
+
+        <!-- Atom -->
+        <div class="atom">
+            <div class="atom-center"></div>
+        </div>
+
+        <!-- Signature -->
+        <div class="signature">Psdm</div>
+
+        <!-- Title -->
+        <div class="title">
+            <div class="icon-circle"></div>
+            <div class="divisi">DIVISI</div>
+            <div class="psdm">PSDM</div>
+            <div class="subtitle">DAYA MANUSIA<br>PENGEMBANGAN SUMBER</div>
+        </div>
+
+        <!-- Logos -->
+        <div class="logo-comm"></div>
+        <div class="logo-text">HIMAK UNIKOM<br>KOMUNIKASI<br>2024-2025<br>KABINET<br>ANTASENA</div>
+
+        <!-- Yellow blobs -->
+        <div class="blob b1"></div>
+        <div class="blob b2"></div>
+        <div class="blob b3"></div>
+        <div class="blob b4"></div>
+        <div class="blob b5"></div>
+
+        <!-- Row 1: Top center -->
+        <div class="person p1">
+            <div class="placeholder">RAFLI</div>
+            <div class="name">
+                <span class="name-big">RAFLI</span>
+                <span class="name-small">Muhammad</span>
+            </div>
+        </div>
+        <div class="badge" style="top: 240px; right: 50px;">KEPALA<br>DIVISI</div>
+
+        <!-- Row 2: Left and Right -->
+        <div class="person p2">
+            <div class="placeholder">AUREL</div>
+            <div class="name">
+                <span class="name-big">AUREL</span>
+                <span class="name-small">Gusti Ratu Maretha</span>
+            </div>
+        </div>
+        <div class="badge" style="top: 360px; left: 30px;">SEKRETARIS<br>DIVISI</div>
+
+        <div class="person p3">
+            <div class="placeholder">RYAN</div>
+            <div class="name">
+                <span class="name-big">RYAN</span>
+                <span class="name-small">Satria Nugraha</span>
+            </div>
+        </div>
+
+        <!-- Row 3: Left, Center, Right -->
+        <div class="person p4">
+            <div class="placeholder">REZA</div>
+            <div class="name">
+                <span class="name-big">REZA</span>
+                <span class="name-small">M. Fadhlin D.</span>
+            </div>
+        </div>
+
+        <div class="person p5">
+            <div class="placeholder">YAUMA</div>
+            <div class="name">
+                <span class="name-big">YAUMA</span>
+                <span class="name-small">M. Akbar</span>
+            </div>
+        </div>
+        <div class="badge" style="top: 560px; left: 50%; transform: translateX(-50%);">ANGKATAN<br>MUDA</div>
+
+        <div class="person p6">
+            <div class="placeholder">ARAISYA</div>
+            <div class="name">
+                <span class="name-big">ARAISYA</span>
+                <span class="name-small">Rizky Putri W.</span>
+            </div>
+        </div>
+        <div class="badge" style="bottom: 440px; right: 30px;">ANGKATAN<br>MUDA</div>
+
+        <!-- Row 4: Left and Right -->
+        <div class="person p7">
+            <div class="placeholder">NAZARIO</div>
+            <div class="name">
+                <span class="name-big">NAZARIO</span>
+                <span class="name-small">Ichsan Ismail</span>
+            </div>
+        </div>
+        <div class="badge" style="bottom: 440px; left: 30px;">ANGKATAN<br>MUDA</div>
+
+        <div class="person p8">
+            <div class="placeholder">INRIANI</div>
+            <div class="name">
+                <span class="name-big">INRIANI</span>
+                <span class="name-small">Rachel Roling</span>
+            </div>
+        </div>
+
+        <!-- Row 5: Bottom left -->
+        <div class="person p9">
+            <div class="placeholder">NADIVA</div>
+            <div class="name">
+                <span class="name-big">NADIVA</span>
+                <span class="name-small">Aulia Putri</span>
+            </div>
+        </div>
+        <div class="badge" style="bottom: 300px; left: 150px;">ANGKATAN<br>MUDA</div>
+
+        <!-- Kabinet text -->
+        <div class="kabinet">KABINET<br>ANTASENA</div>
+
+        <!-- Social Media -->
+        <div class="social">
+            <div class="social-item">
+                <div class="icon ig">📷</div>
+                <span>himak_unikom</span>
+            </div>
+            <div class="social-item">
+                <div class="icon tt">♪</div>
+                <span>himak_unikom</span>
+            </div>
+            <div class="social-item">
+                <div class="icon yt">▶</div>
+                <span>HIMAK UNIKOM OFFICIAL</span>
+            </div>
+        </div>
+
+        <!-- Tupoksi -->
+        <div class="tupoksi">
+            <div class="tupoksi-title">TUPOKSI</div>
+            <div class="tupoksi-text">
+                Divisi Pengembangan Sumber Daya Mahasiswa (PSDM) berperan penting dalam meningkatkan kualitas anggota
+                melalui pelatihan dan pengembangan skill. Divisi ini bertanggung jawab untuk menyelenggarakan program
+                pelatihan yang relevan dengan kebutuhan organisasi, serta memfasilitasi kesempatan anggota untuk
+                mengembangkan diri melalui berbagai kegiatan yang inovatif dan menarik. Selain itu, divisi ini juga
+                melakukan monitoring dan evaluasi kinerja anggota secara berkala untuk memastikan setiap anggota dapat
+                berkembang secara optimal. PSDM mendukung terciptanya organisasi yang produktif dan memberdayakan.
+            </div>
+        </div>
+
+        <!-- Flower -->
+        <div class="flower">❀</div>
+    </div>
+</body>
+
+</html>

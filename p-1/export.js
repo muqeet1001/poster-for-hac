@@ -1,4 +1,4 @@
- const puppeteer = require('puppeteer');
+const puppeteer = require('puppeteer');
 
 (async () => {
   const browser = await puppeteer.launch({
@@ -19,7 +19,7 @@
   });
 
   await page.screenshot({
-    path: 'final.png',
+    path: 'kallas.png',
     fullPage: true
   });
 

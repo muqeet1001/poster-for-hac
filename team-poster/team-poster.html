@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Poster</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #4a9b9b 0%, #5fb3b3 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .poster-container {
+            position: relative;
+            width: 400px;
+            height: 700px;
+            background: linear-gradient(135deg, #4a9b9b 0%, #5fb3b3 100%);
+            overflow: hidden;
+        }
+
+        .logo {
+            position: absolute;
+            top: 40px;
+            right: 40px;
+            width: 80px;
+            height: 80px;
+            background: #ff6b35;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            color: white;
+            font-size: 12px;
+            text-align: center;
+            z-index: 10;
+        }
+
+        .team-table {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 120px;
+            height: 400px;
+            background: #e8e8e8;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            z-index: 5;
+        }
+
+        .team-text {
+            font-size: 48px;
+            font-weight: 900;
+            color: #4a9b9b;
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            letter-spacing: 8px;
+        }
+
+        .person {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid white;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .person-placeholder {
+            width: 100%;
+            height: 100%;
+            background: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            color: #666;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .person-label {
+            position: absolute;
+            color: white;
+            font-size: 14px;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .person-role {
+            font-size: 10px;
+            font-weight: 400;
+            opacity: 0.8;
+            margin-top: 2px;
+        }
+
+        .dashed-line {
+            position: absolute;
+            stroke: white;
+            stroke-width: 2;
+            stroke-dasharray: 5, 5;
+            fill: none;
+            opacity: 0.8;
+        }
+
+        /* People positioned very close to table edges, almost overlapping */
+        .person1 {
+            top: 100px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .person2 {
+            top: 160px;
+            left: 90px;
+        }
+
+        .person3 {
+            top: 160px;
+            right: 90px;
+        }
+
+        .person4 {
+            top: 220px;
+            left: 70px;
+        }
+
+        .person5 {
+            top: 220px;
+            right: 70px;
+        }
+
+        .person6 {
+            top: 280px;
+            left: 90px;
+        }
+
+        .person7 {
+            top: 280px;
+            right: 90px;
+        }
+
+        .person8 {
+            top: 340px;
+            left: 70px;
+        }
+
+        .person9 {
+            top: 340px;
+            right: 70px;
+        }
+
+        .person10 {
+            top: 400px;
+            left: 90px;
+        }
+
+        .person11 {
+            top: 400px;
+            right: 90px;
+        }
+
+        .person12 {
+            bottom: 100px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Labels positioned around the circle */
+        .label1 {
+            top: 90px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+        }
+
+        .label2 {
+            top: 150px;
+            left: 15px;
+        }
+
+        .label3 {
+            top: 150px;
+            right: 15px;
+            text-align: right;
+        }
+
+        .label4 {
+            top: 230px;
+            left: 5px;
+        }
+
+        .label5 {
+            top: 230px;
+            right: 5px;
+            text-align: right;
+        }
+
+        .label6 {
+            top: 310px;
+            left: 15px;
+        }
+
+        .label7 {
+            top: 310px;
+            right: 15px;
+            text-align: right;
+        }
+
+        .label8 {
+            top: 390px;
+            left: 5px;
+        }
+
+        .label9 {
+            top: 390px;
+            right: 5px;
+            text-align: right;
+        }
+
+        .label10 {
+            top: 470px;
+            left: 15px;
+        }
+
+        .label11 {
+            top: 470px;
+            right: 15px;
+            text-align: right;
+        }
+
+        .label12 {
+            bottom: 90px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+        }
+
+        .missing-person {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            color: white;
+            font-size: 12px;
+        }
+
+        .missing-person div:first-child {
+            font-weight: 600;
+        }
+
+        .missing-person div:last-child {
+            font-weight: 400;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="poster-container">
+        <!-- Logo -->
+        <div class="logo">
+            Wise Up<br>Logo
+        </div>
+
+        <!-- Team Table -->
+        <div class="team-table">
+            <div class="team-text">TEAM</div>
+        </div>
+
+        <!-- SVG for dashed lines -->
+        <svg width="400" height="700" style="position: absolute; top: 0; left: 0; pointer-events: none;">
+            <!-- Very short lines connecting people to table edges -->
+            <line class="dashed-line" x1="200" y1="150" x2="200" y2="170" />
+            <line class="dashed-line" x1="140" y1="210" x2="160" y2="220" />
+            <line class="dashed-line" x1="260" y1="210" x2="240" y2="220" />
+            <line class="dashed-line" x1="120" y1="270" x2="140" y2="280" />
+            <line class="dashed-line" x1="280" y1="270" x2="260" y2="280" />
+            <line class="dashed-line" x1="140" y1="330" x2="160" y2="340" />
+            <line class="dashed-line" x1="260" y1="330" x2="240" y2="340" />
+            <line class="dashed-line" x1="120" y1="390" x2="140" y2="400" />
+            <line class="dashed-line" x1="280" y1="390" x2="260" y2="400" />
+            <line class="dashed-line" x1="140" y1="450" x2="160" y2="460" />
+            <line class="dashed-line" x1="260" y1="450" x2="240" y2="460" />
+            <line class="dashed-line" x1="200" y1="600" x2="200" y2="580" />
+        </svg>
+
+        <!-- People arranged in circular pattern -->
+        <div class="person person1">
+            <img src="seema.png" alt="Seema" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+
+        <div class="person person2">
+            <div class="person-placeholder">Yusuf</div>
+        </div>
+
+        <div class="person person3">
+            <div class="person-placeholder">Zuhaib</div>
+        </div>
+
+        <div class="person person4">
+            <div class="person-placeholder">Tuba</div>
+        </div>
+
+        <div class="person person5">
+            <div class="person-placeholder">Likhith</div>
+        </div>
+
+        <div class="person person6">
+            <div class="person-placeholder">Rumaan</div>
+        </div>
+
+        <div class="person person7">
+            <div class="person-placeholder">Muqeet</div>
+        </div>
+
+        <div class="person person8">
+            <div class="person-placeholder">Satwik</div>
+        </div>
+
+        <div class="person person9">
+            <div class="person-placeholder">Siddique</div>
+        </div>
+
+        <div class="person person10">
+            <div class="person-placeholder">Bhavani</div>
+        </div>
+
+        <div class="person person11">
+            <div class="person-placeholder">Shabeen</div>
+        </div>
+
+        <div class="person person12">
+            <div class="person-placeholder">Manisha</div>
+        </div>
+
+        <!-- Labels -->
+        <div class="person-label label1">
+            Seema<br>
+            <span class="person-role">Chairperson</span>
+        </div>
+
+        <div class="person-label label2">
+            Yusuf<br>
+            <span class="person-role">Vice Chair</span>
+        </div>
+
+        <div class="person-label label3">
+            Zuhaib<br>
+            <span class="person-role">Treasurer</span>
+        </div>
+
+        <div class="person-label label4">
+            Tuba Naaz<br>
+            <span class="person-role">Secretary</span>
+        </div>
+
+        <div class="person-label label5">
+            Likhith<br>
+            <span class="person-role">Design Lead</span>
+        </div>
+
+        <div class="person-label label6">
+            Rumaan<br>
+            <span class="person-role">Editorial & Content</span>
+        </div>
+
+        <div class="person-label label7">
+            Muqeet<br>
+            <span class="person-role">Web Design</span>
+        </div>
+
+        <div class="person-label label8">
+            Satwik<br>
+            <span class="person-role">Social Media</span>
+        </div>
+
+        <div class="person-label label9">
+            Siddique<br>
+            <span class="person-role">Tech Lead</span>
+        </div>
+
+        <div class="person-label label10">
+            Bhavani<br>
+            <span class="person-role">Tech Co-Lead</span>
+        </div>
+
+        <div class="person-label label11">
+            Shabeen<br>
+            <span class="person-role">PR Lead</span>
+        </div>
+
+        <div class="person-label label12">
+            Manisha<br>
+            <span class="person-role">Event Coordinator</span>
+        </div>
+
+        <!-- Missing person text -->
+        <div class="missing-person">
+            <div>He's here...</div>
+            <div>but not here</div>
+        </div>
+    </div>
+</body>
+
+</html>
